@@ -1,5 +1,12 @@
-SELECT
-    order_id,
-    customer_id,
-    order_date
-FROM orders;
+SELECT 
+    Orders.OrderID,
+    Orders.ProductID,
+    Orders.CreatedDate AS OrderCreatedDate,
+    Products.Name,
+    Products.CreatedDate AS ProductCreatedDate
+FROM 
+    Orders
+JOIN 
+    Products ON Orders.ProductID = Products.ProductID
+ORDER BY 
+    Orders.CreatedDate;
